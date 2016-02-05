@@ -1,0 +1,30 @@
+{
+  "name": "spirit-animals",
+  "version": "1.0.0",
+  "description": "A helper to generate spirit animal names.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronmccall/spirit-animals.git"
+  },
+  "keywords": [
+    "random-generator",
+    "generator",
+    "names",
+    "spirit-animals"
+  ],
+  "author": "Aaron McCall <aaron@andyet.net> (https://github.com/aaronmccall)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronmccall/spirit-animals/issues"
+  },
+  "homepage": "https://github.com/aaronmccall/spirit-animals#readme",
+  "dependencies": {
+    "lodash.sample": "^4.0.1",
+    "lodash.samplesize": "^4.0.1",
+    "lodash.zip": "^4.0.0"
+  }
+}
