@@ -1,5 +1,5 @@
 var sample = require('lodash.sample');
-var sampleSize = require('lodash.sampleSize');
+var sampleSize = require('lodash.samplesize');
 var zip = require('lodash.zip');
 
 var adjectives = require('./adjectives');
