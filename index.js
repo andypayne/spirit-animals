@@ -25,10 +25,12 @@ function getSampleOf(array, size) {
 }
 
 module.exports = {
-  one: function (withSpaces) {
+  one: function (options) {
+    var withSpaces = options && options.withSpaces;
     return [sample(adjectives), sample(colors), sample(animals)].join(withSpaces ? ' ' : '');
   },
-  get: function (num, withSpaces) {
+  get: function (num, options) {
+    var withSpaces = options && options.withSpaces;
     var number = parseInt(num, 10);
     if (isNaN(number)) {
       throw TypeError('spirit-animals#get must be called with a number, not ' + num);
