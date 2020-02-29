@@ -26,23 +26,28 @@ function getSampleOf(array, size) {
 
 module.exports = {
   one: function (options) {
-    var withSpaces = options && options.withSpaces;
-    return [sample(adjectives), sample(colors), sample(animals)].join(withSpaces ? ' ' : '');
+    var separator = options && options.separator ? options.separator : '';
+    var lowercase = options && options.lowercase;
+    return [
+      lowercase ? sample(adjectives).toLowerCase() : sample(adjectives),
+      lowercase ? sample(colors).toLowerCase() : sample(colors),
+      lowercase ? sample(animals).toLowerCase() : sample(animals)
+    ].join(separator);
   },
   get: function (num, options) {
-    var withSpaces = options && options.withSpaces;
+    var separator = options && options.separator ? options.separator : '';
+    var lowercase  = options && options.lowercase;
     var number = parseInt(num, 10);
     if (isNaN(number)) {
       throw TypeError('spirit-animals#get must be called with a number, not ' + num);
     }
-    var adj, col, anim;
 
     return zip(
-      getSampleOf(adjectives, number),
-      getSampleOf(colors, number),
-      getSampleOf(animals, number)
+      getSampleOf(adjectives, number).map(function(word) { return (lowercase ? word.toLowerCase() : word)}),
+      getSampleOf(colors, number).map(function(word) { return (lowercase ? word.toLowerCase() : word)}),
+      getSampleOf(animals, number).map(function(word) { return (lowercase ? word.toLowerCase() : word)})
     ).map(function (parts) {
-      return parts.join(withSpaces ? ' ' : '');
+      return parts.join(separator);
     });
   }
 };
