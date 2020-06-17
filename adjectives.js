@@ -217,7 +217,7 @@ module.exports = [
   "Calm",
   "Unwavering",
   "Inventive",
-  "Entreprenurial",
+  "Entrepreneurial",
   "Selective",
   "Fashionable",
   "Balanced",
